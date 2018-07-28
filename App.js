@@ -63,7 +63,7 @@ export default createBottomTabNavigator({
       backgroundColor: 'white',
       borderTopWidth: 0,
       shadowOffset: {width: 5, height: 3},
-      shadowColor: 'balck',
+      shadowColor: 'black',
       shadowOpacity: 0.5,
       elevation: 5
     }
@@ -72,9 +72,5 @@ export default createBottomTabNavigator({
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   }
 });
