@@ -27,7 +27,8 @@ class ExploreScreen extends Component {
                 underlineColorAndroid='transparent'
                 placeholder="Try Jeddah"
                 placeholderTextColor="grey"
-                style={styles.textInput} />
+                style={styles.textInput} 
+              />
             </View>
           </View>
         </View>
