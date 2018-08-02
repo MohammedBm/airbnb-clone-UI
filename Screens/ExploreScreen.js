@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TextInput, Platform, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, Image, TextInput, Platform, StatusBar, ScrollView, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
+
+import Category from './components/Explore/Category'
+
+const { height, width } = Dimensions.get('window')
 
 class ExploreScreen extends Component {
   constructor(props) {
@@ -18,8 +22,10 @@ class ExploreScreen extends Component {
 
   render() {
     return (
-      <SafeAreaView>
+      <SafeAreaView style={{ flex: 1}} >
+        
         <View style={styles.container}>
+        
           <View style={styles.header}>
             <View style={styles.inputParent}>
               <Icon name='ios-search' size={20} />
@@ -31,6 +37,49 @@ class ExploreScreen extends Component {
               />
             </View>
           </View>
+
+          <ScrollView
+            scrollEventThrottle={16}
+          >
+            <View style={styles.scrollContainer}>
+              <Text style={styles.welcomeMessage}>
+                What can you we help you find, Nihanned?
+              </Text>
+              <View style={{ height: 130, marginTop: 20 }}>
+                <ScrollView
+                  horizontal={true}
+                  showsHorizontalScrollIndicator={false}
+                >
+                  <Category imageUri={require('../assets/restaurant.jpg')}
+                    name="Home" 
+                  />
+                  <Category imageUri={require('../assets/experiences.jpg')}
+                    name="Experiences" 
+                  />
+                  <Category imageUri={require('../assets/restaurant.jpg')}
+                    name="Resturant" 
+                  />
+                </ScrollView>
+              </View>
+
+              <View style={styles.plusContainer}>
+                <Text style={styles.plusText}>
+                  Introducing Airbnb Plus
+                </Text>
+                <Text style={styles.plusDescription}>
+                  A new selection of homes verified for quality & comfort
+                </Text>
+                <View style={styles.plusImageConatienr}>
+                  <Image
+                    style={styles.plusImage}  
+                   source={require('../assets/home.jpg')}
+                  />
+                </View>
+              </View>
+
+            </View>
+          </ScrollView>
+
         </View>
       </SafeAreaView>
     );
@@ -58,11 +107,56 @@ const styles = StyleSheet.create({
     shadowColor: 'black',
     shadowOpacity: 0.2,
     elevation: 1,
-    marginTop: Platform.OS == 'android' ? 30 : null
+    marginTop: 15
   },
   textInput: {
     flex: 1,
     fontWeight: '700',
     backgroundColor: 'white'
+  },
+  welcomeMessage: {
+    fontSize: 24,
+    fontWeight: '700',
+    paddingHorizontal: 20,
+  },
+  scrollContainer: {
+    flex: 1,
+    backgroundColor: 'white',
+    paddingTop: 20,
+  },
+  horizontalScroll: {
+    height: 130,
+    marginTop: 20
+  },
+  imageStyle: {
+    flex: 1,
+    width: null,
+    height: null,
+    resizeMode: 'cover'
+  },
+  plusContainer: {
+    marginTop: 40, paddingHorizontal: 20
+  },
+  plusText:{
+    fontSize: 24,
+    fontWeight: '700'
+  },
+  plusDescription: {
+    fontWeight: '100',
+    marginTop: 10
+  },
+  plusImageConatienr: {
+    width: width - 40,
+    height: 200,
+    marginTop: 20,
+  },
+  plusImage: {
+    flex: 1,
+    height: null, 
+    width: null,
+    resizeMode: 'cover',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#dddddd'
   }
 });
