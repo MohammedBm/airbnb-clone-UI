@@ -12,6 +12,7 @@ class InboxScreen extends Component {
     return (
     <View style={styles.container}>
         <Text> InboxScreen </Text>
+        
       </View>
     );
   }
