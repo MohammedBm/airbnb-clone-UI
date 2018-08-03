@@ -41,6 +41,7 @@ class ExploreScreen extends Component {
           <ScrollView
             scrollEventThrottle={16}
           >
+
             <View style={styles.scrollContainer}>
               <Text style={styles.welcomeMessage}>
                 What can you we help you find, Nihanned?
@@ -76,8 +77,26 @@ class ExploreScreen extends Component {
                   />
                 </View>
               </View>
-
             </View>
+
+            <View style={{marginTop: 40}}>
+              <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
+                Homes around the world
+              </Text>
+              <View style={{paddingHorizontal: 20, marginTop: 20}}>
+                <View style={{ width: width / 2, height: width / 2, borderWidth: 0.5, borderColor: '#dddddd' }}>
+                  <View style={{ flex: 1 }}>
+                    <Image 
+                      style={{ flex: 1, width: null, height: null, resizeMode: 'cover' }}
+                      source={require('../assets/home.jpg')} />
+                  </View>
+                  <View style={{ flex: 1 }}>
+                    
+                  </View>
+                </View>
+              </View>
+            </View>
+
           </ScrollView>
 
         </View>
