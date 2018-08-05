@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView, Image, TextInput, Platform, Statu
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import Category from './components/Explore/Category'
+import Home from './components/Explore/Home'
 
 const { height, width } = Dimensions.get('window')
 
@@ -83,17 +84,31 @@ class ExploreScreen extends Component {
               <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
                 Homes around the world
               </Text>
-              <View style={{paddingHorizontal: 20, marginTop: 20}}>
-                <View style={{ width: width / 2, height: width / 2, borderWidth: 0.5, borderColor: '#dddddd' }}>
-                  <View style={{ flex: 1 }}>
-                    <Image 
-                      style={{ flex: 1, width: null, height: null, resizeMode: 'cover' }}
-                      source={require('../assets/home.jpg')} />
-                  </View>
-                  <View style={{ flex: 1 }}>
-                    
-                  </View>
-                </View>
+              <View style={{paddingHorizontal: 20, marginTop: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between'}}>
+                <Home width={width} 
+                  name='The Cozy Place' 
+                  type="PRIVATE ROOM - 2 BEDS"
+                  price={82}
+                  rating={4}
+                />
+                <Home width={width} 
+                  name='The Cozy Place' 
+                  type="PRIVATE ROOM - 2 BEDS"
+                  price={82}
+                  rating={2.5}
+                />
+                <Home width={width} 
+                  name='The Fancy Place' 
+                  type="PRIVATE ROOM - 3 BEDS"
+                  price={82}
+                  rating={4.5}
+                />
+                <Home width={width} 
+                  name='The Cozy Place' 
+                  type="PRIVATE ROOM - 2 BEDS"
+                  price={82}
+                  rating={3}
+                />
               </View>
             </View>
 
